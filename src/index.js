@@ -3,11 +3,30 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './App.css';
+import { Provider } from 'react-redux';
 
+
+import ConfigureStore from './Store/ConfigureStore';
+import {ProSidebarProvider} from 'react-pro-sidebar';
+
+
+const storeInstance = ConfigureStore();
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
+
+   
+    <Provider store={storeInstance}>
     <App />
+   
+    </Provider>
+    
+      <App />
+   
+    
+
   </React.StrictMode>
 );
 
